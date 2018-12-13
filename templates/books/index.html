@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %} Media Diet - Books {% endblock %}
+
+{% block content %}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'media_diet' %}">Media Diet</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Books</li>
+    </ol>
+</nav>
+
+<h1>Books</h1>
+
+<div class="row">
+
+    <!-- Books I've Read -->
+    <div class="col-md-7 col-lg-8 order-md-1 order-2">
+
+    {% if books %}
+
+        <h2>Books I've Read</h2>
+
+        {% for book in books %}
+            {% ifchanged book.date_finished.year %}
+                {% if forloop.first != True %}
+            </ul>
+                {% endif %}
+            <h3>{{ book.date_finished.year }}</h3>
+            <ul>
+            {% endifchanged %}
+                <li><a href="https://www.amazon.com/dp/{{ book.amazon_asin}}/">{{ book.title }}</a>
+                    <span class="media-info-light"> by 
+                    {% for author in book.author.all %}
+                        {{ author.display_name }}{%if not forloop.last%}, {%endif%}
+                    {% endfor %}
+                    ({{ book.year_published}})
+                    </span>
+                </li>
+            {% endfor %}
+            </ul>
+    {% endif %}
+
+    {% if old_books %}
+        <h3>{{ old_books_start_year }} and Earlier</h3>
+        <ul>
+        {% for book in old_books %}
+            <li><a href="https://www.amazon.com/dp/{{ book.amazon_asin}}/">{{ book.title }}</a>
+                    <span class="media-info-light"> by 
+                    {% for author in book.author.all %}
+                        {{ author.display_name }}{%if not forloop.last%}, {%endif%}
+                    {% endfor %}
+                    ({{ book.year_published}})
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+    </div><!-- END Books I've Read -->
+
+    <!-- Currently Reading -->
+    <div class="col-md-5 col-lg-4 order-m-2 order-1">
+
+    {% if current_books %}
+
+        <h2>Currently Reading</h2>
+
+        <div class="row">
+        {% for book in current_books %}
+            <div class="col-6 mb-4">
+                    <a href="https://www.amazon.com/dp/{{ book.amazon_asin}}/"><img src="{{ book.amazon_image_url }}" alt="{{ book.title }}" class="img-fluid"></a>
+            </div>
+        {% endfor %}
+        </div>
+
+    {% endif %}
+
+    </div>
+    <!-- END Currently Reading -->
+    
+
+</div><!-- END row -->
+
+{% endblock %}

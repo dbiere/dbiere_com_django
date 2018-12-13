@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Media Diet {% endblock %}
+
+{% block content %}
+
+
+<h1>Media Diet</h1>
+
+<ul>
+    <li><a href="{% url 'books' %}">Books I've Read</a></li>
+    <li><a href="{% url 'movies' %}">Movies I've Watched</a></li>
+</ul>
+
+
+{% endblock %}

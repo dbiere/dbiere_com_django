@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-md-8">
+
+        <h1>Hi, I'm Devon.</h1>
+
+        <p>I'm a software developer and aspiring data scientist. I work for Sprint as an EAI development team lead. I'm currently working on my Bachelor of Science in Data Management/Data Analytics at <a href="https://www.wgu.edu/online-it-degrees/data-management-analytics-bachelors-program.html">WGU</a>.</p>
+
+        <img src="{% static 'img/dbiere/devon_dogs_pic.jpg' %}" class="float-right db-profile-pic">
+
+        <p>I grew up in Cincinnati, Ohio where I had the incredible good luck to attend the <a href="https://en.wikipedia.org/wiki/School_for_Creative_and_Performing_Arts">School for Creative and Performing Arts (SCPA)</a>. I studied Music Education at Ohio State and still love to <a href="https://devdogmusic.com">write and arrange music</a> when I get time, although my few pro credits are long behind me.</p>
+        
+        <p>I live in Lorain, Ohio with my wife, Chrissie. Our son, <a href="http://nickbiere.com">Nick</a>, is a junior at Bowling Green State University and our daughter, Lani, is a senior in high school. I'm crazy about my family. I'm not quite ready for the empty nest.</p>
+
+        <h2>Random Bits</h2>
+
+        <ul>
+            <li>My name is pronounced DEH-vin bee-AIR.</li>
+            <li>I love to learn. I always have a book in my hands or a podcast in my earbuds.</li>
+            <li>When I was a kid, my dream jobs were typist, animator, astronaut, ILM special effects artist, and film music composer. If my 7-year-old self could see me now, spending 90% of my day typing, he would be ecstatic.</li>
+            <li>My favorite movie is <em>The Princess Bride</em>. I saw it in the theater when it first came out. I don't think I've ever been part of a more surprised and insantaneous shout of laughter from an audience than when Peter Cook as the "Impressive Clergyman" opened his mouth and said, "Mawwiage". It's a perfect movie.</li>
+            <li>My favorite non-fiction book is <em>A Short History of Nearly Everything</em> by Bill Bryson.</li>
+
+        </ul>
+
+    </div><!-- END left column-->
+
+    <!-- Right column -->
+    <div class="col-md-4">
+        <h3>Contact / Follow</h3>
+        <table class="db-table-contacts">
+            <tr>
+                <td class="db-contact-icon"><i class="fas fa-envelope"></i></td>
+                <td>contact [at] dbiere.com</td>
+            </tr>
+            <tr>
+                <td class="db-contact-icon"><a href="https://twitter.com/devonbiere"><i class="fab fa-twitter"></i></a></td>
+                <td><a href="https://twitter.com/devonbiere">@devonbiere</a></td>
+            </tr>
+            <tr>
+                <td class="db-contact-icon"><a href="https://www.linkedin.com/in/dbiere/"><i class="fab fa-linkedin"></i></a></td>
+                <td><a href="https://www.linkedin.com/in/dbiere/">Devon Biere</a></td>
+            </tr>
+        </table>
+    </div>
+    <!-- END right column -->
+
+</div><!-- END left/right row -->
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="mainNavbarContainer">
+    <a class="navbar-brand" href="{% url 'index' %}"><h1 class="db-navbar-heading">Devon Biere</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link {% if '/' == request.path %} active {% endif %}" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'learning' in request.path %} active {% endif %}" href="{% url 'learning' %}">Learning</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'media_diet' in request.path %} active {% endif %}" href="{% url 'media_diet' %}">Media Diet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'data_viz' in request.path %} active {% endif %}" href="{% url 'data_viz' %}">Data Viz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'resume' in request.path %} active {% endif %}" href="{% url 'resume' %}">Resume</a>
+            </li>
+        </ul>
+    </div>
+</nav>

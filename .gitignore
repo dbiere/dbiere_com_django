@@ -1,0 +1,21 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Devon custom
+/venv
+/media
+/static
+settings_base_secret.py
+settings_dev.py
+settings_prod.py
+
