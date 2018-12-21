@@ -20,7 +20,7 @@
             {% if forloop.first != True %}
         </ul>
             {% endif %}
-        <h3>{{ movie.date_watched.year}} {% if movie.date_watched.year <= 1992 %} and earlier {% endif %}</h3>
+        <h3>{{ movie.date_watched.year}}</h3>
         <ul>
         {% endifchanged %}
             <li><a href="https://www.imdb.com/title/{{ movie.imdb_id }}">{{ movie.title }}</a> <span class="media-info-light">({{ movie.year_released}})</span></li>
