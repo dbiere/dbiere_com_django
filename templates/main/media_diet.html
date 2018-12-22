@@ -26,7 +26,8 @@
             {% endfor %}
                 <li><a href="{% url 'books' %}">More...</a></li>
             </ul>
-
+        {% else %}
+            </p>
         {% endif %}
 
     </div>
@@ -35,7 +36,7 @@
     <div class="col-md-4">
         <h2><a href="{% url 'movies' %}">Movies I've Watched</a></h2>
 
-        <p>All the movies I've ever seen.</p>
+        <p>All the movies I've ever seen.
             
         {% if recent_movies %}
             Most recent ones...</p>
@@ -45,7 +46,8 @@
             {% endfor %}
                 <li><a href="{% url 'movies' %}">More...</a></li>
             </ul>
-
+        {% else %}
+            </p>
         {% endif %}
 
     </div>
@@ -54,13 +56,13 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
-                <h3>Huh? Really? Why?</h3>
+                <h4>Huh? Really? Why?</h4>
             </div>
             <div class="card-body">
                 <ul>
                     
                     <li>Books and movies are a big part of my life, and I like to keep track of them</li>
-                    <li>I think I can use this for some interesting data visualization and data science projects down the road</li>
+                    <li>I can use this for some interesting data projects down the road</li>
                     <li>The movies you watch and (especially) the books you read can say a lot about who you are</li>
                     <li>You might stumble across ideas of things to read and watch in here</li>
                     <li>I'm thinking of expanding this to include 
