@@ -9,10 +9,70 @@
 
 <h1>Media Diet</h1>
 
-<ul>
-    <li><a href="{% url 'books' %}">Books I've Read</a></li>
-    <li><a href="{% url 'movies' %}">Movies I've Watched</a></li>
-</ul>
+<div class="row">
+
+    <!-- Books -->
+    <div class="col-md-4">
+        <h2><a href="{% url 'books' %}">Books I've Read</a></h2>
+
+        <p>All the books I've ever read.
+
+        {% if recent_books %}
+            Most recent ones...</p>
+
+            <ul>
+            {% for book in recent_books %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+                <li><a href="{% url 'books' %}">More...</a></li>
+            </ul>
+
+        {% endif %}
+
+    </div>
+
+    <!-- Movies -->
+    <div class="col-md-4">
+        <h2><a href="{% url 'movies' %}">Movies I've Watched</a></h2>
+
+        <p>All the movies I've ever seen.</p>
+            
+        {% if recent_movies %}
+            Most recent ones...</p>
+            <ul>
+            {% for movie in recent_movies %}
+                <li>{{ movie.title }} <span class="media-info-light">({{ movie.year_released}})</li>
+            {% endfor %}
+                <li><a href="{% url 'movies' %}">More...</a></li>
+            </ul>
+
+        {% endif %}
+
+    </div>
+
+    <!-- What??? -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Huh? Really? Why?</h3>
+            </div>
+            <div class="card-body">
+                <ul>
+                    
+                    <li>Books and movies are a big part of my life, and I like to keep track of them</li>
+                    <li>I think I can use this for some interesting data visualization and data science projects down the road</li>
+                    <li>The movies you watch and (especially) the books you read can say a lot about who you are</li>
+                    <li>You might stumble across ideas of things to read and watch in here</li>
+                    <li>I'm thinking of expanding this to include 
+                        <a href="https://kottke.org/tags/word.php?word=media%20diet">kottke</a>-style capsule reviews at some point</li>
+                    <li>This is a good way for me to improve my Python / Django skills</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
 
 
 {% endblock %}
