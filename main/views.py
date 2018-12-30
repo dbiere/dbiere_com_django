@@ -24,8 +24,5 @@ def media_diet(request):
 
     return render(request, 'main/media_diet.html', context)
 
-def resume(request):
-    return render(request, 'main/resume.html')
-
 def data_viz(request):
     return render(request, 'main/data_viz.html')

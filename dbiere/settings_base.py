@@ -28,9 +28,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
+    'markdown_deux',
+
     'main.apps.MainConfig',
     'books.apps.BooksConfig',
     'movies.apps.MoviesConfig',
+    'resume.apps.ResumeConfig',
 
 ]
 
@@ -118,3 +121,19 @@ MEDIA_URL = '/media/'
 AMAZON_KEY = 'AKIAI5Q5CLSF7Y5PCQSQ'
 AMAZON_STORE_ID = 'devdog-20'
 
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": "escape",
+    },
+    "trusted": {
+        "extras": {
+            "code-friendly": None,
+        },
+        # Allow raw HTML (WARNING: don't use this for user-generated
+        # Markdown for your site!).
+        "safe_mode": False,
+    }
+}
