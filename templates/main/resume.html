@@ -2,13 +2,116 @@
 
 {% load static %}
 
+{% load markdown_deux_tags %}
+
 {% block title %} Resume {% endblock %}
 
 {% block content %}
 
+<h1 data-toc-skip>Resume</h1>
 
-<h1>Resume</h1>
+<div class="row">
 
-<p>This page will contain my resume and other professional info. For now, you can find me on <a href="https://www.linkedin.com/in/dbiere/">LinkedIn</a>.</p>
+    <!-- Main content -->
+    <div class="col-12 col-md-10"> 
+
+    <p>This page will contain my resume and other professional info. For now, you can find me on <a href="https://www.linkedin.com/in/dbiere/">LinkedIn</a>.</p>
+
+    <h2>Overview</h2>
+    
+    {% markdown %}{{ resume_summary.overview }}{% endmarkdown %}
+
+    <h2 data-toc-text="Qualifications">Summary of Qualifications</h2>
+
+    {% markdown %}{{ resume_summary.qualifications }}{% endmarkdown %}
+
+    <h2>Experience</h2>
+
+    <p><strong>Test Position</strong></p>
+
+    {% markdown %}
+Testing out the **markdown** tags.
+
+* First bullet
+* Second bullet
+* Third bullet
+
+    {% endmarkdown %}
+
+    <p><strong>Development Team Lead (EAI)</strong></p>
+
+    <p>
+            Team lead for the Order Validation Module (OVM), a mission-critical order entry gateway and product catalog used by Sprint systems and external partners.
+            <ul>
+                <li>Manage project work and ticket assignments for a team of ~10 developers (US, Brazil, Philippines, Argentina)</li>
+                <li>Act as technical lead for a Scrum team consisting of ~20 analysts, testers, and developers</li>
+                <li>Triage, manage, and report on production tickets</li>
+                <li>Coordinate code/design/architecture reviews</li>
+                <li>Conduct interviews, facilitate training, and run knowledge transfer sessions</li>
+                <li>Selected for the Sprint Next Leaders Program (2018-2019)</li>
+                <li>Tech/tools used: Java, Java EE, Oracle, SQL, Python, shell scripting, MQ, XML, SOAP, web services, Eclipse, Subversion, Ant, XMLSpy, Agile Central, JIRA</li>
+            </ul>
+    </p>
+
+    <h2>Skills</h2>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+
+        Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+    </p>
+
+    <h2>Education</h2>
+
+    <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+    
+            Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+        </p>
+
+    <h2>Certifications</h2>
+
+    <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+    
+            Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+        </p>
+
+    <h2>Patents</h2>
+
+    <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+    
+            Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+        </p>
+
+        <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+        
+                Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+            </p>
+
+    <h2>Volunteering</h2>
+
+    <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae dolor lectus. Maecenas sit amet rutrum nibh. Mauris sed enim vitae quam viverra consequat. Praesent erat tellus, laoreet non egestas rutrum, pharetra sed lacus. Etiam ac est sodales, euismod risus nec, pulvinar lorem. Donec sagittis tortor vel nunc ornare varius. Aenean et eros dolor. Morbi ac venenatis nisi. Nullam venenatis convallis hendrerit.
+    
+            Duis vestibulum diam at lectus porta, sit amet scelerisque odio tincidunt. Vivamus id tempus orci, ac vulputate nibh. Nam neque lacus, ultricies a finibus sit amet, porttitor eget nunc. Phasellus pulvinar, tortor in laoreet fringilla, sem risus hendrerit turpis, sit amet rutrum mi justo in orci. Nunc nec dapibus odio. Mauris aliquet elit a mauris rutrum, non porta nisi pulvinar. Etiam congue, felis a auctor molestie, lacus urna bibendum justo, non cursus lacus diam id enim. Nam egestas eros vitae condimentum porttitor. Vestibulum tempor mattis felis, ac tristique diam facilisis et. Donec nibh magna, sagittis eget rutrum a, consectetur vel arcu. Nam tincidunt nec nisl egestas ultricies. Nullam laoreet pharetra dui, et suscipit eros. Etiam pulvinar, lorem vel luctus porttitor, ante erat fringilla magna, a feugiat nulla ligula vel metus. Nunc a semper lorem.
+        </p>
+
+    </div>
+    <!-- END: Main content -->
+
+    <!-- TOC -->
+    <div class="d-none d-md-block col-md-2">
+            <nav id="toc" data-spy="affix" data-toggle="toc" class="sticky-top"></nav>
+    </div>
+    <!-- END: TOC-->
+
+</div><!-- END: row -->
+
+<script>
+    $('body').scrollspy({ target: '#toc', offset: 80 })
+</script>
 
 {% endblock %}
