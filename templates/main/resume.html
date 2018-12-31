@@ -108,7 +108,11 @@
     <h2>Patents</h2>
     <ol>
         {% for patent in patents %}
-        <li><a href ="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber={{ patent.uspto_number }}">{{ patent.uspto_number | intcomma }}</a> - {{ patent.title }}</li>
+        <li><a href ="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber={{ patent.uspto_number }}">{{ patent.uspto_number | intcomma }}</a> - {{ patent.title }}
+        {% if patent.continuation_of_uspto_number %}
+            <em><span class="text-muted">(cont. of {{ patent.continuation_of_uspto_number | intcomma }})</span></em>
+        {% endif %}
+        </li>
         {% endfor %}
     </ol>
     {% endif %}
