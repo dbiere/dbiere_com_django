@@ -31,15 +31,15 @@ class Skill(models.Model):
 class Company(models.Model):
     name = models.CharField(max_length=200, blank=False)
 
-    def __str(self):
+    def __str__(self):
         return self.name
 
 class Job(models.Model):
     title = models.CharField(max_length=200, blank=False)
     company = models.ForeignKey('Company', on_delete=models.CASCADE,)
-    department = models.CharField(max_length=300)
+    department = models.CharField(max_length=300, blank=True)
     date_started = models.DateField(blank=False)
-    date_ended = models.DateField()
+    date_ended = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
 
@@ -57,9 +57,9 @@ class Patent(models.Model):
     abstract = models.TextField(blank=False)
     date_filed = models.DateField(blank=False)
     date_granted = models.DateField(blank=False)
-    continuation_of_uspto_number = models.IntegerField()
+    continuation_of_uspto_number = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return self.uspto_number
+        return str(self.uspto_number) + " - " + self.title
 
 #--------------------------------------------------------------------------------------------------

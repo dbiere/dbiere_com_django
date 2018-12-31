@@ -61,6 +61,10 @@ nav[data-toggle=toc] .nav > li > a {
   margin-bottom: 8px;
   margin-top: 0; }
 
+.db-resume-school-logo {
+  max-height: 90px;
+  width: auto; }
+
 .media-info-light {
   color: #919090; }
 
