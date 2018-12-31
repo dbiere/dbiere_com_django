@@ -106,11 +106,11 @@
 
     {% if patents %}
     <h2>Patents</h2>
-    <ul>
+    <ol>
         {% for patent in patents %}
         <li><a href ="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber={{ patent.uspto_number }}">{{ patent.uspto_number | intcomma }}</a> - {{ patent.title }}</li>
         {% endfor %}
-    </ul>
+    </ol>
     {% endif %}
 
     </div>
