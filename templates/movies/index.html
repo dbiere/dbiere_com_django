@@ -13,29 +13,36 @@
       
 <h1>Movies I've Watched</h1>
 
-{% if movies %}
+<p>
+I love movies. They're a huge part of my life.
+These are all the movies I can remember watching, listed by the (approximate) year in which I watched them.
+The links go to IMDB.
+</p>
 
-    {% for movie in movies %}
-        {% ifchanged movie.date_watched.year %}
-            {% if forloop.first != True %}
+    {% if movies %}
+
+        {% for movie in movies %}
+            {% ifchanged movie.date_watched.year %}
+                {% if forloop.first != True %}
+            </ul>
+                {% endif %}
+            <h3>{{ movie.date_watched.year}}</h3>
+            <ul>
+            {% endifchanged %}
+                <li><a href="https://www.imdb.com/title/{{ movie.imdb_id }}">{{ movie.title }}</a> <span class="media-info-light">({{ movie.year_released}})</span></li>
+        {% endfor %}
         </ul>
-            {% endif %}
-        <h3>{{ movie.date_watched.year}}</h3>
+
+    {% endif %}
+
+    {% if old_movies %}
+        <h3>{{ old_movies_start_year }} and Earlier</h3>
         <ul>
-        {% endifchanged %}
+        {% for movie in old_movies %}
             <li><a href="https://www.imdb.com/title/{{ movie.imdb_id }}">{{ movie.title }}</a> <span class="media-info-light">({{ movie.year_released}})</span></li>
-    {% endfor %}
-    </ul>
+        {% endfor %}
+        </ul>
+    {% endif %}
 
-{% endif %}
-
-{% if old_movies %}
-    <h3>{{ old_movies_start_year }} and Earlier</h3>
-    <ul>
-    {% for movie in old_movies %}
-        <li><a href="https://www.imdb.com/title/{{ movie.imdb_id }}">{{ movie.title }}</a> <span class="media-info-light">({{ movie.year_released}})</span></li>
-    {% endfor %}
-    </ul>
-{% endif %}
 
 {% endblock %}

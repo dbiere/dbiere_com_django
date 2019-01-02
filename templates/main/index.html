@@ -64,8 +64,28 @@
 
         <ul>
             <li>Working on B.S. of Data Management/Data Analytics at WGU. Goal is to finish by December 2020 (currently 44.2% complete).</li>
-            <li>Diving back into Python and Django.</li>
+            <li>Diving back into Python and Django. The source code for this site is shared on <a href="https://github.com/dbiere/dbiere_com_django">Github</a>.</li>
             <li>Learning to juggle (literally).</li>
+            {% if recent_books %}
+            <li>Recently read 
+                <ul>
+                {% for book in recent_books %}
+                    <li><em>{{ book.title }}</em></li>
+                {% endfor %}
+                    <li>[<a href="{% url 'books' %}">more...</a>]
+                </ul>
+            </li>
+            {% endif %}
+            {% if recent_movies %}
+            <li>Recently watched 
+                <ul>
+                {% for movie in recent_movies %}
+                    <li><em>{{ movie.title }}</em></li>
+                {% endfor %}
+                    <li>[<a href="{% url 'movies' %}">more...</a>]
+                </ul>
+            </li>
+            {% endif %}
         </ul>
 
     </div>

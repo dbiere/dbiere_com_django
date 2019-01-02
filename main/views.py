@@ -6,7 +6,18 @@ from movies.models import Movie
 from books.models import Book
 
 def index(request):
-    return render(request, 'main/index.html')
+
+    recent_items_limit = 3
+
+    recent_books = Book.objects.all().exclude(date_finished__isnull=True).order_by('-date_finished')[:recent_items_limit]
+    recent_movies = Movie.objects.all().order_by('-date_watched')[:recent_items_limit]
+
+    context = {
+        'recent_books': recent_books,
+        'recent_movies': recent_movies,
+    }
+    
+    return render(request, 'main/index.html', context)
 
 def learning(request):
     return render(request, 'main/learning.html')
