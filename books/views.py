@@ -31,7 +31,7 @@ def index(request):
     # Build context and return
 
     context = {
-        'current_books': current_books,
+        #'current_books': current_books,
         'books': books,
         'old_books': old_books,
         'old_books_start_year': old_books_start_year,
