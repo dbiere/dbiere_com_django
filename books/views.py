@@ -30,6 +30,16 @@ def index(request):
 
     # Build context and return
 
+    '''
+    https://docs.aws.amazon.com/AWSECommerceService/latest/DG/TroubleshootingApplications.html
+
+    Note that your account will lose access to Product Advertising API if it has not generated referring sales using PA API in the last 30 days.
+
+    If you are trying to submit requests that exceed the maximum request for your account (TPD limit), or if your access has been revoked you will receive a 503 error message from Product Advertising API.
+
+    If you lose access to Product Advertising API, please see our other product linking tools, such as Site Stripe. You will regain access to Product Advertising API once your account again begins to drive referring sales.
+    '''
+
     context = {
         #'current_books': current_books,
         'books': books,
