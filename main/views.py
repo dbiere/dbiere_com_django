@@ -7,7 +7,7 @@ from books.models import Book
 
 def index(request):
 
-    recent_items_limit = 3
+    recent_items_limit = 6
 
     recent_books = Book.objects.all().exclude(date_finished__isnull=True).order_by('-date_finished')[:recent_items_limit]
     recent_movies = Movie.objects.all().order_by('-date_watched')[:recent_items_limit]
