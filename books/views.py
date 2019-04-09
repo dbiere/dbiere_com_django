@@ -7,17 +7,17 @@ from .models import Book, Author
 
 def index(request):
     old_books_start_year = 1992
-    #current_books = Book.objects.filter(date_finished__isnull=True).order_by('-date_started').prefetch_related('author')
+    current_books = Book.objects.filter(date_finished__isnull=True).order_by('-date_started').prefetch_related('author')
     books = Book.objects.filter(date_finished__year__gt=old_books_start_year).order_by('-date_finished__year', 'title').prefetch_related('author')
     old_books = Book.objects.filter(date_finished__year__lte=old_books_start_year).order_by('title').prefetch_related('author')
 
     # Get Amazon data, add to current books
 
-    amazon_asin_list = []
-    amazon_product_list = []
+    # amazon_asin_list = []
+    # amazon_product_list = []
 
     # TODO - Handle error properly
-    # TODO - Remove or replace Amazon API, they 
+    # TODO - Remove or replace Amazon API, they cut off access due to low (no) sales volume in early 2019
     # if current_books:
     #     for book in current_books:
     #         amazon_asin_list.append(book.amazon_asin)
@@ -27,8 +27,6 @@ def index(request):
     # if len(amazon_product_list) == len(current_books):
     #     for i, product in enumerate(amazon_product_list):
     #         current_books[i].amazon_image_url = product.large_image_url
-
-    # Build context and return
 
     '''
     https://docs.aws.amazon.com/AWSECommerceService/latest/DG/TroubleshootingApplications.html
@@ -40,8 +38,10 @@ def index(request):
     If you lose access to Product Advertising API, please see our other product linking tools, such as Site Stripe. You will regain access to Product Advertising API once your account again begins to drive referring sales.
     '''
 
+    # Build context and return
+
     context = {
-        #'current_books': current_books,
+        'current_books': current_books,
         'books': books,
         'old_books': old_books,
         'old_books_start_year': old_books_start_year,

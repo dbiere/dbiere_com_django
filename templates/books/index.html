@@ -76,11 +76,30 @@
         <h2>Currently Reading</h2>
 
         <div class="row">
+        
+        <ul><!-- TEMP -->
         {% for book in current_books %}
+
+            <li><a href="https://www.amazon.com/dp/{{ book.amazon_asin}}/">{{ book.title }}</a>
+                <span class="media-info-light"> by 
+                {% for author in book.author.all %}
+                    {{ author.display_name }}{%if not forloop.last%}, {%endif%}
+                {% endfor %}
+                ({{ book.year_published}})
+                </span>
+            </li>
+
+            {% comment %}
             <div class="col-6 mb-4">
                     <a href="https://www.amazon.com/dp/{{ book.amazon_asin}}/"><img src="{{ book.amazon_image_url }}" alt="{{ book.title }}" class="img-fluid"></a>
             </div>
+            {% endcomment %}
+
+
         {% endfor %}
+
+        </ul><!-- TEMP -->
+
         </div>
 
     {% endif %}
