@@ -71,7 +71,7 @@
             <li>Recently watched... 
                 <ul>
                 {% for movie in recent_movies %}
-                    <li><em>{{ movie.title }} ({{ movie.year_released }})</em></li>
+                    <li><em>{{ movie.title }} <span class="media-info-light">({{ movie.year_released }})</span></em></li>
                 {% endfor %}
                     <li>[<a href="{% url 'movies' %}">more...</a>]
                 </ul>

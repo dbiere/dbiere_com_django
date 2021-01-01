@@ -42,7 +42,7 @@
             Most recent ones...</p>
             <ul>
             {% for movie in recent_movies %}
-                <li>{{ movie.title }} <span class="media-info-light">({{ movie.year_released}})</li>
+                <li>{{ movie.title }} <span class="media-info-light">({{ movie.year_released}})</span></li>
             {% endfor %}
                 <li><a href="{% url 'movies' %}">More...</a></li>
             </ul>
