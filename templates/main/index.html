@@ -57,7 +57,6 @@
         <ul>
             <li>Working on <a href ="https://www.wgu.edu/online-it-degrees/data-management-analytics-bachelors-program.html">B.S. of Data Management/Data Analytics</a> at WGU. Goal is to finish by June 2021 (currently 84.3% complete).</li>
             <li>Diving back into Python and Django. The source code for this site is shared on <a href="https://github.com/dbiere/dbiere_com_django">Github</a>.</li>
-            <li>Working on getting my piano chops back, practicing at least 15 minutes a day.</li>
             {% if recent_books %}
             <li>Recently read...
                 <ul>
@@ -72,7 +71,7 @@
             <li>Recently watched... 
                 <ul>
                 {% for movie in recent_movies %}
-                    <li><em>{{ movie.title }}</em></li>
+                    <li><em>{{ movie.title }} ({{ movie.year_released }})</em></li>
                 {% endfor %}
                     <li>[<a href="{% url 'movies' %}">more...</a>]
                 </ul>
