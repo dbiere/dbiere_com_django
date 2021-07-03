@@ -4,7 +4,7 @@ django-markdown-deux==1.0.5
 gunicorn==19.9.0
 lxml==4.2.5
 markdown2==2.3.7
-pip==18.1
+pip==19.2
 psycopg2==2.7.6.1
 psycopg2-binary==2.7.6.1
 python-amazon-simple-product-api==2.2.11
