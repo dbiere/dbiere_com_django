@@ -3,8 +3,6 @@
 {% load static %}
 {% load humanize %}
 
-{% load markdown_deux_tags %}
-
 {% block title %} Resume {% endblock %}
 
 {% block content %}
@@ -18,13 +16,13 @@
 
     {% if resume_summary.overview %}
         <h2>Overview</h2>
-        {% markdown %}{{ resume_summary.overview }}{% endmarkdown %}
+        {{ resume_summary.overview | safe }}
         <hr>
     {% endif %}
 
     {% if resume_summary.qualifications %}
         <h2 data-toc-text="Qualifications">Summary of Qualifications</h2>
-        {% markdown %}{{ resume_summary.qualifications }}{% endmarkdown %}
+        {{ resume_summary.qualifications | safe }}
         <hr>
     {% endif %}
 
@@ -46,7 +44,7 @@
                 <div class="col-6 text-right">{{ job.location }}</div>
             </div>
             <br>
-            {% markdown %}{{ job.description }}{% endmarkdown %}
+            {{ job.description | safe }}
         {% endfor %}
         <hr>
     {% endif %}
@@ -75,7 +73,7 @@
                 <td class="justify-content-center"><img class="db-resume-school-logo" src="{% static 'img/resume/wgu_logo.png' %}" alt="Western Governors University Logo"></td>
                 <td><strong>Western Governors University</strong><br>
                     B.S. Data Management/Data Analytics<br>
-                    <em>Expected in 2021</em></td>
+                    <em>2018 - 2021</em></td>
             </tr>
             <tr>
                 <td class="justify-content-center"><img class="db-resume-school-logo" src="{% static 'img/resume/osu_logo.png' %}" alt="The Ohio State University Logo"></td>
