@@ -14,4 +14,3 @@ def index(request):
     }
 
     return render(request, 'movies/index.html', context)
-

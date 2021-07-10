@@ -1,4 +1,37 @@
-"""dbiere URL Configuration
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+
+from rest_framework import routers
+
+from api import views
+
+router = routers.DefaultRouter()
+router.register(r'movies', views.MovieViewSet)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+
+    path('', include('main.urls')),
+    path('media_diet/books/', include('books.urls')),
+    path('media_diet/movies/', include('movies.urls')),
+
+    path('resume/', include('resume.urls')),
+
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+
+
+
+
+"""dbiere URL Configuration Notes
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -13,21 +46,3 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-
-from django.conf import settings
-from django.conf.urls.static import static
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-
-    path('', include('main.urls')),
-    path('media_diet/books/', include('books.urls')),
-    path('media_diet/movies/', include('movies.urls')),
-
-    path('resume/', include('resume.urls')),
-    
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
