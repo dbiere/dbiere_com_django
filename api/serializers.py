@@ -15,4 +15,3 @@ class MovieSerializer(serializers.ModelSerializer):
         # exclude = [] to indicate which fields to exclude
         fields = ['id', 'title', 'year_released', 'imdb_id', 'date_watched']
 
-
