@@ -8,6 +8,7 @@ from .models import TrainingSource
 class TrainingAdmin(admin.ModelAdmin):
     list_display = ['title', 'source', 'trainer', 'category', 'date_started', 'is_complete']
     list_display_links = ['title', ]
+    list_editable = ('is_complete',)
     list_filter = ('is_complete', 'source', 'category', 'date_started')
     list_per_page = 200
     ordering = ('-date_started',)
