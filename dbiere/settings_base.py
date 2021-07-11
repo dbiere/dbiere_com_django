@@ -29,11 +29,14 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'rest_framework',
+    'taggit',
 
     'main.apps.MainConfig',
     'books.apps.BooksConfig',
     'movies.apps.MoviesConfig',
     'resume.apps.ResumeConfig',
+    'api.apps.ApiConfig',
+    'learning.apps.LearningConfig',
 
 ]
 
@@ -84,7 +87,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -139,4 +141,6 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ]
 }
+
+TAGGIT_CASE_INSENSITIVE = True
 
