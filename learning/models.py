@@ -12,7 +12,9 @@ class Training(models.Model):
     date_started = models.DateField(blank=False)
     category = models.ForeignKey('TrainingCategory', on_delete=models.RESTRICT)
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True) # min 0.0 -> max 5.0
+    is_complete = models.BooleanField(default=False)
     notes = models.TextField()
+
     tags = TaggableManager()
 
     def __str__(self):
