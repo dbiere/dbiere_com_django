@@ -6,15 +6,21 @@ from .models import TrainingSource
 
 # Configure admin settings for Learning app
 class TrainingAdmin(admin.ModelAdmin):
+    list_display = ['title', 'source', 'trainer', 'category', 'date_started',]
+    list_display_links = ['title', ]
+    list_filter = ('source', 'category', 'date_started')
     list_per_page = 200
+    ordering = ('-date_started',)
     search_fields = ('title', 'year_published')
-
+    
 class TrainingCategoryAdmin(admin.ModelAdmin):
     list_per_page = 200
+    ordering = ('name', )
     search_fields = ('name', )
-
+    
 class TrainingSourceAdmin(admin.ModelAdmin):
     list_per_page = 200
+    ordering = ('name',)
     search_fields = ('name', )
 
 # Register models
