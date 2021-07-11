@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.conf import settings
 
-from .models import Book, Author
+from .models import Book
 
 def index(request):
     old_books_start_year = 1992

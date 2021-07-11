@@ -3,24 +3,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-from rest_framework import routers
-
-from api import views
-
-router = routers.DefaultRouter()
-router.register(r'movies', views.MovieViewSet)
-
 urlpatterns = [
+    
+    path('', include('main.urls')),
+
     path('admin/', admin.site.urls),
 
-    path('', include('main.urls')),
+    path('api/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    path('learning', include('learning.urls')),
+
     path('media_diet/books/', include('books.urls')),
     path('media_diet/movies/', include('movies.urls')),
 
     path('resume/', include('resume.urls')),
 
-    path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

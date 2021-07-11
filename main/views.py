@@ -19,9 +19,6 @@ def index(request):
     
     return render(request, 'main/index.html', context)
 
-def learning(request):
-    return render(request, 'main/learning.html')
-
 def media_diet(request):
 
     recent_items_limit = 10
@@ -35,5 +32,3 @@ def media_diet(request):
 
     return render(request, 'main/media_diet.html', context)
 
-def data_viz(request):
-    return render(request, 'main/data_viz.html')

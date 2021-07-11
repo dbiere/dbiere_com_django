@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from learning.models import Training, TrainingCategory, TrainingSource
 from movies.models import Movie
 
 # Serializer info
@@ -14,4 +15,20 @@ class MovieSerializer(serializers.ModelSerializer):
         # fields = [] to indicate which fields to include or
         # exclude = [] to indicate which fields to exclude
         fields = ['id', 'title', 'year_released', 'imdb_id', 'date_watched']
+
+class TrainingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Training
+        exclude = []
+
+class TrainingSourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TrainingSource
+        exclude = []
+
+class TrainingCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TrainingCategory
+        exclude = []
+
 
