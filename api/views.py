@@ -6,7 +6,10 @@ from movies.models import Movie
 # REST
 from rest_framework import viewsets
 from .serializers import MovieSerializer
-from .serializers import TrainingSerializer, TrainingCategorySerializer, TrainingSourceSerializer
+from .serializers import TrainingSerializer
+from .serializers import TrainingCategorySerializer
+from .serializers import TrainingFullSerializer
+from .serializers import TrainingSourceSerializer
 
 #--------------------------------------------------------------------------------------------------
 # Movies
@@ -27,7 +30,7 @@ class TrainingFullViewSet(viewsets.ModelViewSet):
         .prefetch_related('source') \
         .prefetch_related('category') \
         .prefetch_related('tags')
-    serializer_class = TrainingSerializer
+    serializer_class = TrainingFullSerializer
 
 class TrainingSourceViewSet(viewsets.ModelViewSet):
     queryset = TrainingSource.objects.all()
