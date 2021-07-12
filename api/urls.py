@@ -13,6 +13,7 @@ router = routers.DefaultRouter()
 # Here the string determines the part of the URI path after "api/" (e.g., "api/movies")
 router.register(r'movies', views.MovieViewSet)  # represents the URL path after /api
 router.register(r'learning/trainings', views.TrainingViewSet)
+router.register(r'learning/trainings_full', views.TrainingFullViewSet)
 router.register(r'learning/training_sources', views.TrainingSourceViewSet)
 router.register(f'learning/training_categories', views.TrainingCategoryViewSet)
 

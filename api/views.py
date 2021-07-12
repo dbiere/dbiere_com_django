@@ -8,11 +8,21 @@ from rest_framework import viewsets
 from .serializers import MovieSerializer
 from .serializers import TrainingSerializer, TrainingCategorySerializer, TrainingSourceSerializer
 
+#--------------------------------------------------------------------------------------------------
+# Movies
+
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all().order_by('title')
     serializer_class = MovieSerializer
 
+#--------------------------------------------------------------------------------------------------
+# Learning
+
 class TrainingViewSet(viewsets.ModelViewSet):
+    queryset = Training.objects.all().order_by('-date_started')
+    serializer_class = TrainingSerializer
+
+class TrainingFullViewSet(viewsets.ModelViewSet):
     queryset = Training.objects.all().order_by('-date_started') \
         .prefetch_related('source') \
         .prefetch_related('category') \
