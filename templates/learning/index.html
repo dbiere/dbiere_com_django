@@ -8,5 +8,19 @@
 
 <p>This page will contain info on training and courses I've completed (Udemy, Pluralsight, YouTube, etc.)</p>
 
+<div id="vue-app">
+    [[ message ]]
+</div>
+
+<script>
+var app = new Vue({
+    delimiters: ["[[", "]]"],
+    el: '#vue-app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+</script>
+
 {% endblock %}
 
