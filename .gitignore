@@ -11,6 +11,9 @@ db.sqlite3
 .AppleDouble
 .LSOverride
 
+### IDEs ###
+.idea
+
 # Devon custom
 /venv
 /media
