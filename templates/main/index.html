@@ -79,7 +79,7 @@
                         </span>
                     </em></li>
                 {% endfor %}
-                    <li><a href="{% url 'books' %}">more...</a>
+                    <li><a href="{% url 'books' %}">More...</a>
                 </ul>
             </li>
             {% endif %}
@@ -89,7 +89,7 @@
                 {% for movie in recent_movies %}
                     <li><em><strong>{{ movie.title }}</strong> <span class="media-info-light">({{ movie.year_released }})</span></em></li>
                 {% endfor %}
-                    <li><a href="{% url 'movies' %}">more...</a>
+                    <li><a href="{% url 'movies' %}">More...</a>
                 </ul>
             </li>
             {% endif %}
