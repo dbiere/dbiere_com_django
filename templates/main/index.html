@@ -70,7 +70,7 @@
             <li>Recently read...
                 <ul>
                 {% for book in recent_books %}
-                    <li><em>{{ book.title }}
+                    <li><em><strong>{{ book.title }}</strong>
                         <span class="media-info-light"> by
                         {% for author in book.author.all %}
                             {{ author.display_name }}{%if not forloop.last%}, {%endif%}
@@ -79,7 +79,7 @@
                         </span>
                     </em></li>
                 {% endfor %}
-                    <li>[<a href="{% url 'books' %}">more...</a>]
+                    <li><a href="{% url 'books' %}">more...</a>
                 </ul>
             </li>
             {% endif %}
@@ -87,9 +87,9 @@
             <li>Recently watched... 
                 <ul>
                 {% for movie in recent_movies %}
-                    <li><em>{{ movie.title }} <span class="media-info-light">({{ movie.year_released }})</span></em></li>
+                    <li><em><strong>{{ movie.title }}</strong> <span class="media-info-light">({{ movie.year_released }})</span></em></li>
                 {% endfor %}
-                    <li>[<a href="{% url 'movies' %}">more...</a>]
+                    <li><a href="{% url 'movies' %}">more...</a>
                 </ul>
             </li>
             {% endif %}
