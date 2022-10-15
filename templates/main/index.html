@@ -11,7 +11,9 @@
 
         <h1>Hi, I'm Devon.</h1>
 
-        <p>I'm a software developer interested in data engineering, application integration, technical architecture, and program management. I work for <a href="https://www.t-mobile.com/">T-Mobile</a> as principal software engineer and EAI development team lead. I live in Lorain, Ohio with my wife, Chrissie.</p>
+        <p>I'm a solutions architect interested in application integration, data engineering, event-driven architecture, and software design.
+            I live in Lorain, Ohio with my wife Chrissie and our dog Banjo.
+            We're the proud parents of <a href="https://www.linkedin.com/in/nick-biere/">Nick</a> and <a href="https://www.behance.net/leilaninoel">Leilani</a>.</p>
 
         <img src="{% static 'img/dbiere/devon_banjo_2021-10.jpg' %}" class="float-right db-profile-pic">
 
@@ -68,7 +70,14 @@
             <li>Recently read...
                 <ul>
                 {% for book in recent_books %}
-                    <li><em>{{ book.title }}</em></li>
+                    <li><em>{{ book.title }}
+                        <span class="media-info-light"> by
+                        {% for author in book.author.all %}
+                            {{ author.display_name }}{%if not forloop.last%}, {%endif%}
+                        {% endfor %}
+                        ({{ book.year_published}})
+                        </span>
+                    </em></li>
                 {% endfor %}
                     <li>[<a href="{% url 'books' %}">more...</a>]
                 </ul>
