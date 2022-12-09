@@ -19,10 +19,16 @@
 
         {% if recent_books %}
             Most recent ones...</p>
-
             <ul>
             {% for book in recent_books %}
-                <li>{{ book.title }}</li>
+                <li>{{ book.title }}
+                <span class="media-info-light"> by
+                        {% for author in book.author.all %}
+                            {{ author.display_name }}{%if not forloop.last%}, {%endif%}
+                        {% endfor %}
+                        ({{ book.year_published}})
+                </span>
+                </li>
             {% endfor %}
                 <li><a href="{% url 'books' %}">More...</a></li>
             </ul>
