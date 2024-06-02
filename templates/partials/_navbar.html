@@ -12,16 +12,7 @@
                 <a class="nav-link {% if '/' == request.path %} active {% endif %}" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://blog.dbiere.com/" target="_blank" rel="noopener noreferrer">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if 'learning' in request.path %} active {% endif %}" href="{% url 'learning' %}">Learning</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {% if 'media_diet' in request.path %} active {% endif %}" href="{% url 'media_diet' %}">Media Diet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% if 'resume' in request.path %} active {% endif %}" href="{% url 'resume' %}">Resume</a>
             </li>
         </ul>
     </div>
